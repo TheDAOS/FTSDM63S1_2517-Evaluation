@@ -1,4 +1,4 @@
-import { Box, Flex, Table, Card, Input, Link } from "@chakra-ui/react"
+import { Box, Flex, Table, Card, Input, Link, NativeSelect } from "@chakra-ui/react"
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router";
 
@@ -11,12 +11,23 @@ function Logs() {
         <>
             <Card.Root w='100%' background='bg.muted'>
                 <Card.Body>
-                    <Input
-                        background='bg'
-                        variant='subtle'
-                        w='300px'
-                        placeholder="Search..."
-                    />
+                    <Flex gap={3}>
+                        <Input
+                            background='bg'
+                            variant='subtle'
+                            w='300px'
+                            placeholder="Search..."
+                        />
+
+                        <NativeSelect.Root w='200px' variant='outline'>
+                            <NativeSelect.Field placeholder={'Severity'}>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </NativeSelect.Field>
+                            <NativeSelect.Indicator />
+                        </NativeSelect.Root>
+                    </Flex>
                 </Card.Body>
             </Card.Root>
 
