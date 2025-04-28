@@ -11,9 +11,9 @@ function Logs() {
 
     // useEffect(() => {
     //     log = log.filter((data) => {
-    //         if (filterSeverity === '') return true;
+    //         if (filterSeverity == '') return true;
 
-    //         if (data.severity === filterSeverity) return true;
+    //         if (data.severity == filterSeverity) return true;
     //         return false
     //     })
     // }, [filterSeverity])
