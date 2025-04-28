@@ -1,11 +1,22 @@
 import { Box, Flex, Table, Card, Input, Link, NativeSelect } from "@chakra-ui/react"
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router";
 
 
 function Logs() {
-    const log = useSelector((state) => state.log);
+    let log = useSelector((state) => state.log);
+    const [filterSeverity, setFilterSeverity] = useState('');
     // { "id": 1, "timestamp": 1710000034, "severity": "high", "message": "Unhandled promise", "devId": "DEV1001" },
+
+    // useEffect(() => {
+    //     log = log.filter((data) => {
+    //         if (filterSeverity === '') return true;
+
+    //         if (data.severity === filterSeverity) return true;
+    //         return false
+    //     })
+    // }, [filterSeverity])
 
     return (
         <>
