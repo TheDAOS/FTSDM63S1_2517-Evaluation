@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import store from "./Redux/store";
 import Upload from './components/Upload';
 import ContentBox from './components/ContentBox';
+import Home from './components/Home';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<h1>Home</h1>} />
+          <Route path="/" element={<ContentBox><Home /></ContentBox>} />
           <Route path="/upload" element={<ContentBox><Upload /></ContentBox>} />
           <Route path="/logs" element={<ContentBox><Logs /></ContentBox>} />
           <Route path="/search/:devId" element={<h1>/search/:devId</h1>} />

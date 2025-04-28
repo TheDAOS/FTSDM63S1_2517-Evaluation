@@ -44,7 +44,7 @@ function Upload() {
     }
 
     return (
-        <Card.Root w='100%' background='bg.muted'>
+        <Card.Root w='100%' background='bg.muted' variant='outline'>
             <Card.Header textAlign='center' fontWeight='bold' fontSize='xl'> Upload JSON Log Here</Card.Header>
             <Card.Body>
 

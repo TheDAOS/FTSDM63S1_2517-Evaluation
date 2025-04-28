@@ -1,4 +1,4 @@
-import { Box, Flex, Table } from "@chakra-ui/react"
+import { Box, Flex, Table, Card } from "@chakra-ui/react"
 import { useSelector } from "react-redux";
 
 
