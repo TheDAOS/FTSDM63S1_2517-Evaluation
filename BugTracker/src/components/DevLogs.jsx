@@ -1,6 +1,7 @@
-import { Box, Flex, Table, Card, Input } from "@chakra-ui/react"
+import { Box, Flex, Table, Card, Input, Link, Highlight } from "@chakra-ui/react"
 import { useSelector } from "react-redux";
-import { useParams } from "react-router";
+import { useParams, NavLink } from "react-router";
+
 
 
 function DevLogs() {
@@ -13,6 +14,14 @@ function DevLogs() {
     return (
         <>
             <Card.Root w='100%' background='bg.muted'>
+                <Card.Header textAlign='center' fontWeight='bold' fontSize='xl'>
+                    {/* <Highlight
+                        query={devId}
+                        styles={{ px: "0.5", bg: "teal.muted" }}
+                    > */}
+                        Filtered By devId : {devId}
+                    {/* </Highlight> */}
+                </Card.Header>
                 <Card.Body>
                     <Input
                         background='bg'
@@ -38,7 +47,15 @@ function DevLogs() {
                             <Table.Cell>{item.timestamp}</Table.Cell>
                             <Table.Cell>{item.message}</Table.Cell>
                             <Table.Cell>{item.severity}</Table.Cell>
-                            <Table.Cell>{item.devId}</Table.Cell>
+                            <Table.Cell>
+                                <Link
+                                    variant="underline"
+                                    colorPalette="teal"
+                                >
+                                    <NavLink to={`/search/${item.devId}`}>{item.devId}</NavLink>
+                                </Link>
+
+                            </Table.Cell>
                         </Table.Row>
                     ))}
                 </Table.Body>

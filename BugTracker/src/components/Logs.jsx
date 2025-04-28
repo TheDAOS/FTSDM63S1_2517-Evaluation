@@ -1,5 +1,6 @@
-import { Box, Flex, Table, Card, Input } from "@chakra-ui/react"
+import { Box, Flex, Table, Card, Input, Link } from "@chakra-ui/react"
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router";
 
 
 function Logs() {
@@ -34,7 +35,15 @@ function Logs() {
                             <Table.Cell>{item.timestamp}</Table.Cell>
                             <Table.Cell>{item.message}</Table.Cell>
                             <Table.Cell>{item.severity}</Table.Cell>
-                            <Table.Cell>{item.devId}</Table.Cell>
+                            <Table.Cell>
+                                <Link
+                                    variant="underline"
+                                    colorPalette="teal"
+                                >
+                                    <NavLink to={`/search/${item.devId}`}>{item.devId}</NavLink>
+                                </Link>
+
+                            </Table.Cell>
                         </Table.Row>
                     ))}
                 </Table.Body>
