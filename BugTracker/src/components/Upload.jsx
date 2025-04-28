@@ -15,6 +15,7 @@ function Upload() {
         try {
             let data = JSON.parse(textArea);
             // { "id": 1, "timestamp": 1710000034, "severity": "high", "message": "Unhandled promise", "devId": "DEV1001" }
+            
             if (
                 data.id &&
                 data.timestamp &&
@@ -52,6 +53,7 @@ function Upload() {
                         JSON <Field.RequiredIndicator />
                     </Field.Label>
                     <Textarea
+                        variant='subtle'
                         size='lg'
                         background='bg'
                         placeholder="Add JSON text here"

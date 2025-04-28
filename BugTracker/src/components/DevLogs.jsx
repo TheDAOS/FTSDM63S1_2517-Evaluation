@@ -1,10 +1,14 @@
 import { Box, Flex, Table, Card, Input } from "@chakra-ui/react"
 import { useSelector } from "react-redux";
+import { useParams } from "react-router";
 
 
-function Logs() {
-    const log = useSelector((state) => state.log);
+function DevLogs() {
+    let log = useSelector((state) => state.log);
+    let { devId } = useParams();
     // { "id": 1, "timestamp": 1710000034, "severity": "high", "message": "Unhandled promise", "devId": "DEV1001" },
+
+    log = log.filter((data) => data.devId === devId);
 
     return (
         <>
@@ -43,4 +47,4 @@ function Logs() {
     )
 }
 
-export default Logs
+export default DevLogs

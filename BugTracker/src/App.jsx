@@ -7,6 +7,8 @@ import store from "./Redux/store";
 import Upload from './components/Upload';
 import ContentBox from './components/ContentBox';
 import Home from './components/Home';
+import DevLogs from './components/DevLogs';
+import ErrorPage from './components/404';
 
 
 function App() {
@@ -20,7 +22,8 @@ function App() {
           <Route path="/" element={<ContentBox><Home /></ContentBox>} />
           <Route path="/upload" element={<ContentBox><Upload /></ContentBox>} />
           <Route path="/logs" element={<ContentBox><Logs /></ContentBox>} />
-          <Route path="/search/:devId" element={<h1>/search/:devId</h1>} />
+          <Route path="/search/:devId" element={<ContentBox><DevLogs /></ContentBox>} />
+          <Route path="*" element={<ContentBox><ErrorPage /></ContentBox>} />
         </Routes>
       </BrowserRouter>
     </Provider>
