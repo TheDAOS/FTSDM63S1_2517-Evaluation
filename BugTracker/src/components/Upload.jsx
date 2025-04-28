@@ -22,7 +22,6 @@ function Upload() {
                 data.message &&
                 data.devId
             ) {
-                console.log('jj');
                 setError({ error: false, message: '' })
                 dispatch(uploadLog(data))
                 navigate("/logs");
@@ -49,7 +48,7 @@ function Upload() {
             <Card.Body>
 
                 <Field.Root invalid={error.error}>
-                    <Field.Label>
+                    <Field.Label ms={1}>
                         JSON <Field.RequiredIndicator />
                     </Field.Label>
                     <Textarea
