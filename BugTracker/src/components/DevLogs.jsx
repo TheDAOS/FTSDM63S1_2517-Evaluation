@@ -14,7 +14,7 @@ function DevLogs() {
     return (
         <>
             <Card.Root w='100%' background='bg.muted'>
-                <Card.Header textAlign='center' fontWeight='bold' fontSize='xl'>
+                <Card.Header fontWeight='bold' fontSize='xl' padding='15px'>
                     {/* <Highlight
                         query={devId}
                         styles={{ px: "0.5", bg: "teal.muted" }}
@@ -22,14 +22,14 @@ function DevLogs() {
                         Filtered By devId : {devId}
                     {/* </Highlight> */}
                 </Card.Header>
-                <Card.Body>
+                {/* <Card.Body>
                     <Input
                         background='bg'
                         variant='subtle'
                         w='300px'
                         placeholder="Search..."
                     />
-                </Card.Body>
+                </Card.Body> */}
             </Card.Root>
 
             <Table.Root size="sm" variant='outline' interactive>
@@ -44,7 +44,7 @@ function DevLogs() {
                 <Table.Body>
                     {log.map((item) => (
                         <Table.Row key={item.id}>
-                            <Table.Cell>{item.timestamp}</Table.Cell>
+                            <Table.Cell>{new Date(item.timestamp * 1000).toLocaleString()}</Table.Cell>
                             <Table.Cell>{item.message}</Table.Cell>
                             <Table.Cell>{item.severity}</Table.Cell>
                             <Table.Cell>
